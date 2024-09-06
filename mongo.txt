@@ -18,7 +18,7 @@ You can opt-out by running the disableTelemetry() command.
    2024-09-05T08:20:22.391+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
 ------
 
-  CREATE DATABASE:
+  1.CREATE DATABASE:
 
  test> use student
 switched to db student
@@ -48,7 +48,7 @@ student> db.student.insertOne({id:205,name:"baby"})
   insertedId: ObjectId('66d91e902bc2d1b9fe2710c0')
 }
 
- DB COLLECTION:
+  2.DB COLLECTION:
 
   student> db.student.find()
 [
@@ -67,7 +67,7 @@ student> db.student.insertOne({id:205,name:"baby"})
   { _id: ObjectId('66d91e902bc2d1b9fe2710c0'), id: 205, name: 'baby' }
 ]
 
-   UPDATE ONE:
+   3.UPDATE ONE:
 
    student> db.student.updateOne({id:205,name:"baby"},{$set:{name:"vaishu"}})
 {
@@ -98,7 +98,7 @@ student> db.student.find()
   }
 ]
 
-    INSERT MANY:
+    4.INSERT MANY:
 
   student> db.student.insertMany([{id:206,name:"selvi"}])
 {
@@ -127,7 +127,7 @@ student> db.student.find()
   { _id: ObjectId('66d921bf2bc2d1b9fe2710c1'), id: 206, name: 'selvi' }
 ]
 
-    UPDATEMANY:
+    5.UPDATEMANY:
  
   student> db.student.updateMany({id:203,name:"priya"},{$set:{name:"nivi"}})
 {
@@ -159,7 +159,7 @@ student> db.student.find()
   { _id: ObjectId('66d921bf2bc2d1b9fe2710c1'), id: 206, name: 'selvi' }
 ]
 
-  DELETEONE:
+   6.DELETEONE:
 
   student> db.student.deleteOne({id:202,name:"madhu"})
 { acknowledged: true, deletedCount: 1 }
@@ -184,7 +184,7 @@ student> db.student.find()
   { _id: ObjectId('66d921bf2bc2d1b9fe2710c1'), id: 206, name: 'selvi' }
 ]
 
-   DELETMANY:
+   7.DELETMANY:
 
   student> db.student.deleteMany({id:206,name:"selvi"})
 { acknowledged: true, deletedCount: 1 }
@@ -208,7 +208,7 @@ student> db.student.find()
   }
 ]
 
-   LIMIT:
+   8.LIMIT:
 
   student> db.student.find().sort({name:1}).limit(3)
 [
@@ -225,7 +225,7 @@ student> db.student.find()
   }
 ]
 
-   SKIP:
+   9.SKIP:
 
   student> db.student.find().skip(2)
 [
@@ -241,7 +241,7 @@ student> db.student.find()
   }
 ]
 
-  GREATERTHAN:
+  10.GREATERTHAN:
 
   student> db.student.findOne({id:{$gt:201}})
 { _id: ObjectId('66d91e592bc2d1b9fe2710be'), id: 203, name: 'nivi' }
@@ -255,7 +255,7 @@ student> db.student.find()
   name: 'harshini'
 }
 
-  LESSER THAN OR EQUAL:
+  11.LESSER THAN OR EQUAL:
 
   student> db.student.findOne({id:{$lte:205}})
 {
@@ -264,7 +264,7 @@ student> db.student.find()
   name: 'harshini'
 }
 
-  GREATER THAN OR EQUAL:
+  12.GREATER THAN OR EQUAL:
 
   student> db.student.findOne({id:{$gte:205}})
 { _id: ObjectId('66d91e902bc2d1b9fe2710c0'), id: 205, name: 'vaishu' }
