@@ -1,0 +1,76 @@
+Microsoft Windows [Version 10.0.22631.4037]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\nirai\Downloads\sqlite-tools-win-x64-3460100>sqlite3
+SQLite version 3.46.1 2024-08-13 09:16:08 (UTF-16 console I/O)
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> sqlite3 employee.db
+
+  1.CREATE TABLE:
+ 
+sqlite>  create table emp_details(emp_id integer,firstname varchar(100),lastname varchar(100),address varchar(100),salary integer);
+   
+    INSERT VALUES:
+
+ sqlite>  insert into emp_details(emp_id,firstname,lastname,address,salary)values(101,'Nirai','Mathi','chennai',2000);
+ sqlite>  insert into emp_details(emp_id,firstname,lastname,address,salary)values(102,'Madhu','Mitha','karur',3000);
+ sqlite>  insert into emp_details(emp_id,firstname,lastname,address,salary)values(103,'Sri','Ram','madurai',4000);
+ sqlite>  insert into emp_details(emp_id,firstname,lastname,address,salary)values(104,'Harshu','Kummar','nilgirls',5000);
+ sqlite> insert into emp_details(emp_id,firstname,lastname,address,salary)values(105,'Jaya','Priya','erode',6000);
+
+    2.SELECT:
+
+ sqlite> select*from emp_details;
+
+101|Nirai|Mathi|chennai|2000
+102|Madhu|Mitha|karur|3000
+103|Sri|Ram|madurai|4000
+104|Harshu|Kummar|nilgirls|5000
+105|Jaya|Priya|erode|6000
+
+     3.READ OPERATION:
+
+ sqlite> select emp_id,firstname,lastname,address,salary from emp_details where salary>3000;
+
+103|Sri|Ram|madurai|4000
+104|Harshu|Kummar|nilgirls|5000
+105|Jaya|Priya|erode|6000
+
+    4.UPDATE QUERY:
+
+ sqlite> update emp_details set address='coimbatore' where emp_id=103;
+
+sqlite> select*from emp_details;
+
+101|Nirai|Mathi|chennai|2000
+102|Madhu|Mitha|karur|3000
+103|Sri|Ram|coimbatore|4000
+104|Harshu|Kummar|nilgirls|5000
+105|Jaya|Priya|erode|6000
+
+   5.DELETE QUERY:
+
+ sqlite> delete from emp_details where emp_id=105;
+
+ sqlite> select*from emp_details;
+
+101|Nirai|Mathi|chennai|2000
+102|Madhu|Mitha|karur|3000
+103|Sri|Ram|coimbatore|4000
+104|Harshu|Kummar|nilgirls|5000
+
+    6.DROP QUERY:
+
+ sqlite> drop table emp_details;
+
+ sqlite> select*from emp_details;
+
+ Parse error: no such table: emp_details
+
+
+
+  
+
+  
